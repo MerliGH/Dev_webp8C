@@ -1,0 +1,47 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #0a2499;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+tr:hover {
+    background-color: #f1f9ff;
+}
+
+/* Encabezado de página */
+h1 {
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+

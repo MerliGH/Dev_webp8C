@@ -1,0 +1,30 @@
+{% extends 'pendientes/base.html' %}
+
+{% block content %}
+<h1>Lista de Pendientes desde JSON (solo lectura)</h1>
+
+<table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>UserID</th>
+            <th>Título</th>
+            <th>Completado</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for pendiente in pendientes %}
+        <tr>
+            <td>{{ pendiente.id }}</td>
+            <td>{{ pendiente.userId }}</td>
+            <td>{{ pendiente.title }}</td>
+            <td>{{ pendiente.completed }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No hay pendientes en el JSON.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

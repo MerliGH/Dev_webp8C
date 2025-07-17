@@ -1,0 +1,38 @@
+{% extends 'pendientes/base.html' %}
+{% block content %}
+<h1>Lista de todos los pendientes: (ID y Título)</h1>
+<!-- Botón para crear pendiente -->
+<div style="margin-bottom: 15px;">
+    <a href="{% url 'crear_pendiente' %}">
+        <button style="padding: 5px 10px;">➕ Crear pendiente</button>
+    </a>
+</div>
+
+<table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Acciones</th>  <!-- Nueva columna para botones -->
+        </tr>
+    </thead>
+    <tbody>
+        {% for pendiente in pendientes %}
+        <tr>
+            <td>{{ pendiente.id }}</td>
+            <td>{{ pendiente.title }}</td>
+            <td>
+                <a href="{% url 'editar_pendiente' pendiente.id %}">
+                    <button style="margin-right: 5px;">✏️ Editar</button>
+                </a>
+                <a href="{% url 'eliminar_pendiente' pendiente.id %}">
+                    <button style="margin-right: 5px;">🗑️ Eliminar</button>
+                </a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="3">No hay pendientes resueltos.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

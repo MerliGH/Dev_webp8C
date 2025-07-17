@@ -1,0 +1,12 @@
+{% extends 'pendientes/base.html' %}
+
+{% block content %}
+<h2>¿Estás segura/o que deseas eliminar este pendiente?</h2>
+<p><strong>{{ pendiente.title }}</strong></p>
+
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Sí, eliminar</button>
+    <a href="{% url 'lista_pendientes' %}">Cancelar</a>
+</form>
+{% endblock %}

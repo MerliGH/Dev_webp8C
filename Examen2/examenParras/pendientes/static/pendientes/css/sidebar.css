@@ -1,0 +1,85 @@
+/* sidebar.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    height: 100vh;
+    background-color: #222; /* fondo oscuro */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.2rem;
+    box-sizing: border-box;
+    position: fixed;
+}
+
+/* Logo + Icono */
+.sidebar h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white; /* texto blanco */
+}
+
+.sidebar h1 i {
+    color: #ffffff; /* verde para el icono */
+    font-size: 1.8rem;
+}
+
+/* Hora */
+.sidebar .time {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+/* Navegación */
+.sidebar nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    display: block;
+    margin-bottom: 0.3rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.sidebar nav a:hover {
+    background-color: #555;
+}
+
+/* Contenido principal */
+.main-content {
+    margin-left: 220px; /* espacio para el sidebar */
+    padding: 20px;
+    flex-grow: 1;
+}
+
+
+.sidebar nav a.crear-pendiente {
+    background-color: #0a2499; /* azul fijo */
+    color: white !important;   /* fuerza el color blanco */
+}
+
+.sidebar nav a.crear-pendiente:hover {
+    background-color: #99abfc; /* un azul más oscuro al pasar mouse */
+       color: rgb(0, 0, 0) ;
+       font: bold !important;
+}
+.sidebar nav a.crear-pendiente2 {
+    background-color: #000000; /* azul fijo */
+    color: white !important;   /* fuerza el color blanco */
+}
+
+.sidebar nav a.crear-pendiente2:hover {
+    background-color: #99abfc; /* un azul más oscuro al pasar mouse */
+       color: rgb(255, 255, 255) ;
+       font: bold !important;
+}

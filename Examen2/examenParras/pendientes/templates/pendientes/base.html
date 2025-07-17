@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Parra's Dev® - Main panel</title>
+    <link rel="stylesheet" href="{% static 'pendientes/css/sidebar.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="{% static 'pendientes/css/styles.css' %}">
+</head>
+<body>
+    <div class="sidebar">
+        <h1><i class="fas fa-clipboard-list"></i>Parra's Dev®</h1>
+
+        <!-- Hora y fecha -->
+        <div class="time-label"><b>La hora es:</b></div>
+        
+        <div class="time" id="clock"></div>
+        
+
+        <div class="time-label"><b>Fecha: </b></div>
+        <div class = "time-label">Julio/16/2025</div>
+        <div class = "time-label">___________________________</div>
+        
+        <div></div><br>
+
+
+        <nav>
+          
+            <a href="{% url 'crear_pendiente' %}" class="crear-pendiente">Crear Pendiente</a>
+        </nav>
+
+         <nav>
+            <a href="{% url 'json_pendientes' %}"class="crear-pendiente2">Consumir API</a>
+         </nav>
+        <div class = "time-label">___________________________</div>
+         <nav>
+            <a href="{% url 'lista_pendientes' %}">Todos los pendientes</a>
+            <a href="{% url 'solo_ids' %}">Solo IDs</a>
+            <a href="{% url 'ids_titles' %}">IDs y Titles</a>
+            <a href="{% url 'sin_resolver' %}">Sin Resolver</a>
+            <a href="{% url 'resueltos' %}">Resueltos</a>
+            <a href="{% url 'ids_userid' %}">IDs y UserID</a>
+            <a href="{% url 'resueltos_userid' %}">Resueltos (UserID)</a>
+            <a href="{% url 'sin_resolver_userid' %}">Sin Resolver (UserID)</a>
+    
+        </nav>
+    </div>
+
+    <div class="main-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <script>
+        function updateClockAndDate() {
+            const clock = document.getElementById('clock');
+            const date = document.getElementById('date');
+
+            const now = new Date();
+
+            if (clock) {
+                clock.textContent = now.toLocaleTimeString();
+            }
+
+            if (date) {
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                date.textContent = now.toLocaleDateString('es-ES', options);
+            }
+        }
+
+        setInterval(updateClockAndDate, 1000);
+        updateClockAndDate();
+    </script>
+</body>
+</html>

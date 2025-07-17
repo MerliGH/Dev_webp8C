@@ -1,0 +1,10 @@
+{% extends 'pendientes/base.html' %}
+{% block content %}
+<h1>{% if form.instance.pk %}Editar{% else %}Crear{% endif %} Pendiente</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+    <a href="{% url 'lista_pendientes' %}">Cancelar</a>
+</form>
+{% endblock %}
